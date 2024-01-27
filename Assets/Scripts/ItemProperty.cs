@@ -1,5 +1,8 @@
 ﻿public enum ItemProperty {
     None,
     Mug,
-    CoffeeCup
+    CoffeeCup,
+    Mail,
+    Paper,
+    PaperStack
 }

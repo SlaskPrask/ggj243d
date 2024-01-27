@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 
 public class CoffeeMachine : MonoBehaviour {
-    [FormerlySerializedAs("itemDetector")] [FormerlySerializedAs("detector")]
     public ItemCollector itemCollector;
 
     void Start() {
@@ -15,12 +14,13 @@ public class CoffeeMachine : MonoBehaviour {
         }
 
         itemCollector.listener += collected;
-
-        itemCollector.setWants(ItemProperty.Mug);
     }
 
     public bool collected(ItemProperty property, Item item, bool isTarget) {
-        item.fillCoffeeCup();
+        if (item is CoffeeCup coffee) {
+            coffee.fillCoffeeCup();
+        }
+
         Debug.Log("Filled");
 
         return true;

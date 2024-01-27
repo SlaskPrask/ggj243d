@@ -1,0 +1,15 @@
+.unity-list-view__empty-label {
+  display: none;
+}
+
+.binder-note {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.binder-note-text {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+}
