@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d5437bbb-8ea2-433d-bbc3-e1b21d222753}">
+		<property name="assetPath">
+			<value>Could postbox - Audio - Zas.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.75</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{474b891c-c42c-4ef7-a6c1-0eea08c4380c}</destination>
+		</relationship>
+	</object>
+</objects>
