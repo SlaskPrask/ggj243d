@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerController : MonoBehaviour {
+    private BodyPartController controller;
+    private byte playerIndex;
+
+    public void Initialize(BodyPartController bodyController) {
+        controller = bodyController;
+    }
+
+    public BodyPartController.BodyPart GetBodyPart() {
+        return controller.bodyPart;
+    }
+
+    public void MoveLeftStick(InputAction.CallbackContext ctx) {
+        controller.MoveLeftAppendage(ctx.ReadValue<Vector2>());
+    }
+
+    public void MoveRightStick(InputAction.CallbackContext ctx) {
+        controller.MoveRightAppendage(ctx.ReadValue<Vector2>());
+    }
+}
