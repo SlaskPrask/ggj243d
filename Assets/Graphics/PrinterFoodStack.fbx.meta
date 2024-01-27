@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 2ec3b50271901aa4ea401509fe2bdb2c
+guid: 302b318621707af45a2ee062b9544d0b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 130674f8ff622a94d8164753356145c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PrinterFood
+    second: {fileID: 2100000, guid: 01c2213101960694b90b65f7484e74d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: ff1eaaa65252b5d489950a2d7ad51e4c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
