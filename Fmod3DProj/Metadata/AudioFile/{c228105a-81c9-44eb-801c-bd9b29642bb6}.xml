@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c228105a-81c9-44eb-801c-bd9b29642bb6}">
+		<property name="assetPath">
+			<value>Printer Ate - Audio - Zas.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{474b891c-c42c-4ef7-a6c1-0eea08c4380c}</destination>
+		</relationship>
+	</object>
+</objects>

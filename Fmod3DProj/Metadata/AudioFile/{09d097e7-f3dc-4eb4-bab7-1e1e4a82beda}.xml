@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{09d097e7-f3dc-4eb4-bab7-1e1e4a82beda}">
+		<property name="assetPath">
+			<value>Coffee Me - Audio - Zas.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{474b891c-c42c-4ef7-a6c1-0eea08c4380c}</destination>
+		</relationship>
+	</object>
+</objects>
