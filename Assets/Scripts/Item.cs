@@ -10,8 +10,17 @@ public class Item : MonoBehaviour {
     void Start() {
     }
 
-    // Update is called once per frame
     void Update() {
+    }
+
+    public void emptyCoffeeCup() {
+        properties.Remove(ItemProperty.CoffeeCup);
+        properties.Add(ItemProperty.Mug);
+    }
+
+    public void fillCoffeeCup() {
+        properties.Remove(ItemProperty.Mug);
+        properties.Add(ItemProperty.CoffeeCup);
     }
 
     public virtual void delivered(ItemProperty tag) {
