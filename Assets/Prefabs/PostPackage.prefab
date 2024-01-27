@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3123926244554712069}
   - component: {fileID: 5202105221282388028}
-  - component: {fileID: 9101011989333233135}
+  - component: {fileID: 7138841789310653072}
   m_Layer: 0
   m_Name: PostPackage
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9101011989333233135
+--- !u!114 &7138841789310653072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6972405680861244573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9ddbaa9afb179c4bb26c916208296d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a4ff14d6fde1874dbe877c05e29a854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   properties: 03000000

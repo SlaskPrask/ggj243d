@@ -37,7 +37,6 @@ public class QuestManager : MonoBehaviour {
 
             List<NPC> available = npcs.Where(n => !n.hasQuest()).ToList();
             while (available.Count == 0) {
-                Debug.Log("no free npc for a new quest");
                 yield return oneSecond;
                 available = npcs.Where(n => !n.hasQuest()).ToList();
             }

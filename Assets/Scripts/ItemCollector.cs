@@ -6,8 +6,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class ItemCollector : MonoBehaviour {
-    public Collider trigger;
-
     public ItemProperty wants;
 
     public event Func<ItemProperty, Item, bool, bool> listener;
@@ -31,15 +29,5 @@ public class ItemCollector : MonoBehaviour {
 
     public void setWants(ItemProperty property) {
         wants = property;
-    }
-
-    public void OnValidate() {
-        if (!trigger) {
-            trigger = GetComponentsInChildren<Collider>().First(c => c.isTrigger);
-        }
-
-        if (trigger && trigger.gameObject.layer != 7) {
-            trigger.gameObject.layer = 7;
-        }
     }
 }
