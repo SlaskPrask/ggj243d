@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour {
         get; private set;
     }
 
+    public static PlayerDetector playerDetector {
+        get; private set;
+    }
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -15,5 +19,7 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+
+        playerDetector = GetComponentInChildren<PlayerDetector>().Initialize();
     }
 }
