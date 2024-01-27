@@ -18,7 +18,7 @@ public class ItemCollector : MonoBehaviour {
         }
 
         Item item = other.GetComponentInParent<Item>();
-        if (item.properties.Contains(wants)) {
+        if (item && item.properties.Contains(wants)) {
             if (listener(wants, item, item.target == null || item.target == this)) {
                 item.delivered(wants);
             }

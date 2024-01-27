@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,11 @@ using Random = System.Random;
 
 public class QuestManager : MonoBehaviour {
     private static readonly Random random = new Random();
+    public BinderUI binder;
 
     private List<NPC> npcs;
     public List<float> newQuestTimers;
+
 
     public void Start() {
         npcs = FindObjectsOfType<NPC>().ToList();
@@ -43,7 +46,15 @@ public class QuestManager : MonoBehaviour {
 
             NPC npc = available[index];
 
-            npc.generateNewQuest();
+            ActiveQuest quest = npc.generateNewQuest();
+            if (quest == null) {
+                Debug.LogWarning("no quest, why");
+                continue;
+            }
+
+            BinderListEntry binderEntry = binder.addQuest(quest.formatted());
+
+            npc.setOnQuestDone(() => binder.finishQuest(binderEntry));
         }
     }
 }
