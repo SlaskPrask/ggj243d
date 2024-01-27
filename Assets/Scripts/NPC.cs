@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 public class NPC : MonoBehaviour {
-    [FormerlySerializedAs("itemDetector")] [FormerlySerializedAs("detector")]
+    private static readonly Random random = new Random();
+
     public ItemCollector itemCollector;
+    public QuestList questList;
 
     // Start is called before the first frame update
     void Start() {
@@ -26,14 +30,25 @@ public class NPC : MonoBehaviour {
         }
 
         if (property == ItemProperty.CoffeeCup) {
-            item.properties.Remove(ItemProperty.CoffeeCup);
-            item.properties.Add(ItemProperty.Mug);
+            item.emptyCoffeeCup();
             Debug.Log("Got Coffee");
         }
+
+        itemCollector.setWants(ItemProperty.None);
 
         item.target = null;
 
         return true;
+    }
+
+    public void generateNewQuest() {
+        int index = random.Next(questList.itemQuests.Count);
+        ItemProperty property = questList.itemQuests[index];
+        setQuest(property);
+    }
+
+    public bool hasQuest() {
+        return itemCollector.hasWants();
     }
 
     public void setQuest(ItemProperty property) {
@@ -44,6 +59,7 @@ public class NPC : MonoBehaviour {
 
         if (!itemCollector.hasWants()) {
             itemCollector.wants = property;
+            Debug.Log($"got quest {property}", gameObject);
         }
     }
 }

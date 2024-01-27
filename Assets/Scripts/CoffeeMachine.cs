@@ -20,8 +20,7 @@ public class CoffeeMachine : MonoBehaviour {
     }
 
     public bool collected(ItemProperty property, Item item, bool isTarget) {
-        item.properties.Remove(ItemProperty.Mug);
-        item.properties.Add(ItemProperty.CoffeeCup);
+        item.fillCoffeeCup();
         Debug.Log("Filled");
 
         return true;
