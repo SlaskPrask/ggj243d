@@ -1,1 +1,54 @@
-{}
+{
+    "name": "Input Master",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "555eb7e4-be82-471b-a293-28c6a0d98ed2",
+            "actions": [
+                {
+                    "name": "Left Appendage",
+                    "type": "Value",
+                    "id": "0d589452-3f0c-4271-85ef-264974d22a73",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Right Appendage",
+                    "type": "Value",
+                    "id": "6e7202ef-e8eb-4906-9c90-e1e7712635c2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eb3d578e-e41b-4864-bc5f-a73ab271eebf",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Appendage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a29eccee-a369-416c-b925-2245d1a3663b",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Appendage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
