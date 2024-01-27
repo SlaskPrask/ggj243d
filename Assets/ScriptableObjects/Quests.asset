@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fda71b2544b62a4f80f12626252aea9, type: 3}
   m_Name: Quests
   m_EditorClassIdentifier: 
-  <itemQuests>k__BackingField: 
+  <itemQuests>k__BackingField:
+  - wantedItem: 2
+    noteText: Bring {to} coffee

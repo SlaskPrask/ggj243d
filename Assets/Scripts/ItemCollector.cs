@@ -12,13 +12,13 @@ public class ItemCollector : MonoBehaviour {
 
     public event Func<ItemProperty, Item, bool, bool> listener;
 
-    public void OnTriggerEnter(Collider other) {
+    public void OnCollisionEnter(Collision other) {
         if (wants == ItemProperty.None) {
             return;
         }
 
-        Item item = other.GetComponentInParent<Item>();
-        if (item.properties.Contains(wants)) {
+        Item item = other.gameObject.GetComponentInParent<Item>();
+        if (item && item.properties.Contains(wants)) {
             if (listener(wants, item, item.target == null || item.target == this)) {
                 item.delivered(wants);
             }
