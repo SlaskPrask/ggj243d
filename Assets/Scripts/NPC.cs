@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,12 @@ using Random = System.Random;
 public class NPC : MonoBehaviour {
     private static readonly Random random = new Random();
 
+
     public ItemCollector itemCollector;
     public QuestList questList;
+    public Action onQuestDone = null;
+
+    private ActiveQuest quest;
 
     // Start is called before the first frame update
     void Start() {
@@ -38,28 +43,39 @@ public class NPC : MonoBehaviour {
 
         item.target = null;
 
+        if (onQuestDone != null) {
+            onQuestDone();
+            onQuestDone = null;
+        }
+
+        quest = null;
+
         return true;
     }
 
-    public void generateNewQuest() {
+    public ActiveQuest generateNewQuest() {
         int index = random.Next(questList.itemQuests.Count);
-        ItemProperty property = questList.itemQuests[index];
-        setQuest(property);
+        QuestData questData = questList.itemQuests[index];
+        setQuest(questData);
+        return quest;
     }
 
     public bool hasQuest() {
-        return itemCollector.hasWants();
+        return quest != null;
     }
 
-    public void setQuest(ItemProperty property) {
-        if (property == ItemProperty.None) {
-            itemCollector.setWants(ItemProperty.None);
-            return;
-        }
+    private void setQuest(QuestData questData) {
+        itemCollector.setWants(questData.wantedItem);
 
-        if (!itemCollector.hasWants()) {
-            itemCollector.wants = property;
-            Debug.Log($"got quest {property}", gameObject);
+        if (questData.wantedItem == ItemProperty.None) {
+            quest = null;
         }
+        else {
+            quest = new ActiveQuest(questData, this, this); //TODO: target
+        }
+    }
+
+    public void setOnQuestDone(Action onQuestDone) {
+        this.onQuestDone = onQuestDone;
     }
 }
