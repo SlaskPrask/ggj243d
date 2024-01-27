@@ -35,7 +35,10 @@ public class NPC : MonoBehaviour {
         }
 
         if (property == ItemProperty.CoffeeCup) {
-            item.emptyCoffeeCup();
+            if (item is CoffeeCup coffee) {
+                coffee.emptyCoffeeCup();
+            }
+
             Debug.Log("Got Coffee");
         }
 

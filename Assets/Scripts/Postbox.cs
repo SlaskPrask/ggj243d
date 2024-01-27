@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 
-public class CoffeeMachine : MonoBehaviour {
+public class Postbox : MonoBehaviour {
     public ItemCollector itemCollector;
 
     void Start() {
@@ -17,11 +15,8 @@ public class CoffeeMachine : MonoBehaviour {
     }
 
     public bool collected(ItemProperty property, Item item, bool isTarget) {
-        if (item is CoffeeCup coffee) {
-            coffee.fillCoffeeCup();
-        }
-
-        Debug.Log("Filled");
+        Destroy(item);
+        Debug.Log("Mailed");
 
         return true;
     }
