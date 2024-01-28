@@ -38,6 +38,10 @@ public class NPCManager : MonoBehaviour {
     }
 
     public string getName() {
+        if (availableNames.Count == 0) {
+            return "Slask";
+        }
+
         int index = random.Next(availableNames.Count);
         string name = availableNames[index];
         availableNames.RemoveAt(index);
