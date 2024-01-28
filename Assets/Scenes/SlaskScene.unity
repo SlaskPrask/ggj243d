@@ -750,6 +750,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3939638800151579917, guid: 63bbfff7f24da5a44a904f8bcc72d312,
+        type: 3}
+      propertyPath: handHeightMult
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

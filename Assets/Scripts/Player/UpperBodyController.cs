@@ -48,7 +48,7 @@ public class UpperBodyController : BodyPartController {
             -Mathf.Sqrt(1 - Mathf.Min(movement.x * movement.x + movement.y * movement.y, 0f)),
             movement.y) * armLength;
 
-        hand.position = socket + transform.rotation * spherePoint;
+        hand.position = socket + transform.rotation * spherePoint + Vector3.up * movement.magnitude * .7f;
     }
 
     void GrabHand(Vector3 hand, bool state, Transform trigger) {
