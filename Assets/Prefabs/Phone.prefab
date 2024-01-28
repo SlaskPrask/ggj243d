@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394644089471160384}
   - component: {fileID: 2760859165660777969}
+  - component: {fileID: 8085356693017783800}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -60,6 +61,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8085356693017783800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886919837392428549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d973ef17bf4db948abd0b72d72f4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNumberPrefab: {fileID: 3778947965598658374, guid: ff02c5cd7adb80243818982499ccb0dd,
+    type: 3}
+  cost: 200
+  toughness: 700
+  minHitForce: 6
 --- !u!1001 &4167682500507380981
 PrefabInstance:
   m_ObjectHideFlags: 0
