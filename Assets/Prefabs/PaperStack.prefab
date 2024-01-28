@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5707827687440048111}
   - component: {fileID: 4689082294675964049}
   - component: {fileID: 5297579931067091834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PaperStack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PrinterFoodStack
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ec3b50271901aa4ea401509fe2bdb2c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

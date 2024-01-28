@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1451709700515471278}
   - component: {fileID: 8021961474637156690}
   - component: {fileID: -8367678586110043587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Printer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,10 +164,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 8a63e981c6345484fa535200953b3188,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8a63e981c6345484fa535200953b3188,
         type: 3}
       propertyPath: m_Name
       value: Printer
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a63e981c6345484fa535200953b3188,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

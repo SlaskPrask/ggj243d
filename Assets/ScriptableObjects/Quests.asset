@@ -21,6 +21,5 @@ MonoBehaviour:
       type: 3}
     noteText: Deliver {from}'s package
   - wantedItem: 5
-    spawnItem: {fileID: 6972405680861244573, guid: 667e3adba1e757a4e9b426f6fc0c5b94,
-      type: 3}
+    spawnItem: {fileID: 0}
     noteText: Load the printer for {from}

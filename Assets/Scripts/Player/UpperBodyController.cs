@@ -5,6 +5,8 @@ using UnityEngine;
 public class UpperBodyController : BodyPartController {
     public Transform leftHandAnchor;
     public Transform rightHandAnchor;
+    public Transform leftHand;
+    public Transform rightHand;
 
     public Transform centralShoulder;
 
@@ -63,20 +65,50 @@ public class UpperBodyController : BodyPartController {
         joint.angularXMotion = ConfigurableJointMotion.Locked;
         joint.angularYMotion = ConfigurableJointMotion.Locked;
         joint.angularZMotion = ConfigurableJointMotion.Locked;
+
+        JointDrive drivePos = new JointDrive();
+        drivePos.positionSpring = 10000f;
+        drivePos.positionDamper = 10f;
+        drivePos.maximumForce = 1f;
+
+        JointDrive driveRot = new JointDrive();
+        driveRot.positionSpring = 1000f;
+        driveRot.positionDamper = 2f;
+        driveRot.maximumForce = 1f;
+
+        /*joint.slerpDrive = driveRot;
+        joint.xDrive = drivePos;
+        joint.yDrive = drivePos;
+        joint.zDrive = drivePos;*/
+
         return joint;
     }
 
     private void LeftTriggerEvent(Collider other) {
-        ConfigurableJoint joint = CreateJoint(other.transform.parent);
-        other.transform.parent.position = leftHandAnchor.position;
-        joint.connectedBody = leftHandAnchor.GetComponent<Rigidbody>();
+        Rigidbody rigidbody = other.GetComponentInParent<Rigidbody>();
+        foreach (ConfigurableJoint existingJoint in leftHandObjects) {
+            if (existingJoint.gameObject == rigidbody.gameObject) {
+                return;
+            }
+        }
+
+        ConfigurableJoint joint = CreateJoint(rigidbody.transform);
+        rigidbody.transform.position = leftHand.position;
+        joint.connectedBody = leftHand.GetComponent<Rigidbody>();
         leftHandObjects.Add(joint);
     }
 
     private void RightTriggerEvent(Collider other) {
-        ConfigurableJoint joint = CreateJoint(other.transform.parent);
-        other.transform.parent.position = rightHandAnchor.position;
-        joint.connectedBody = rightHandAnchor.GetComponent<Rigidbody>();
+        Rigidbody rigidbody = other.GetComponentInParent<Rigidbody>();
+        foreach (ConfigurableJoint existingJoint in rightHandObjects) {
+            if (existingJoint.gameObject == rigidbody.gameObject) {
+                return;
+            }
+        }
+
+        ConfigurableJoint joint = CreateJoint(rigidbody.transform);
+        rigidbody.transform.position = rightHand.position;
+        joint.connectedBody = rightHand.GetComponent<Rigidbody>();
         rightHandObjects.Add(joint);
     }
 
@@ -95,7 +127,7 @@ public class UpperBodyController : BodyPartController {
             foreach (ConfigurableJoint joint in leftHandObjects) {
                 if (joint) {
                     joint.connectedBody = null;
-                    joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    //joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     Destroy(joint);
                 }
             }
@@ -112,7 +144,7 @@ public class UpperBodyController : BodyPartController {
                 if (joint) {
                     joint.connectedBody = null;
 
-                    joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    //joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     Destroy(joint);
                 }
             }
