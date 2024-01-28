@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 7946491d850b6ae47b14f2bc3e2a2095, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 1116eccacde23514282ec4dc8869660a, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 23900132619bc534aac8c9b8164dd858,
     type: 3}
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e7f5bd49908a4a8fffcaad53aa3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hud: {fileID: 2386285961654714251}
   startScreen: {fileID: 1173391678322837425}
   gameTime: 1200
   switchTime: 30
@@ -174,6 +173,10 @@ MonoBehaviour:
   - 5
   - 10
   - 25
+  - 25
+  - 20
+  - 18
+  - 15
 --- !u!114 &4433279532787886957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +213,7 @@ MonoBehaviour:
   - Mia
   - Magnus
   - Gunnar
-  - Sage
+  - Saga
   - Tom
   - Sanna
   - Hilda

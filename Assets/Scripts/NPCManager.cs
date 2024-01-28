@@ -20,7 +20,7 @@ public class NPCManager : MonoBehaviour {
         "Mia",
         "Magnus",
         "Gunnar",
-        "Sage",
+        "Saga",
         "Tom",
         "Sanna",
         "Hilda",

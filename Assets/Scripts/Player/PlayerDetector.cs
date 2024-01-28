@@ -45,18 +45,8 @@ public class PlayerDetector : MonoBehaviour
         Debug.Log("Player " + connectedPlayers + " joined");
         if (players[0] == null && players[1] == null) {
             players[0] = input.GetComponent<PlayerController>();
-            players[0].Initialize(lowerBodyController);
         } else if (players[0] != null && players[1] == null) {
-            players[1] = input.GetComponent<PlayerController>();
-            switch (players[0].GetBodyPart()) {
-                case BodyPartController.BodyPart.ARMS:
-                    players[1].Initialize(lowerBodyController);
-                    break;
-                case BodyPartController.BodyPart.LEGS:
-                    players[1].Initialize(upperBodyController);
-                    break;
-            }
-            
+            players[1] = input.GetComponent<PlayerController>();            
         } else if (players[0] == null && players[1] != null) {
             players[0] = input.GetComponent<PlayerController>();
             switch (players[1].GetBodyPart()) {
@@ -71,6 +61,8 @@ public class PlayerDetector : MonoBehaviour
 
         if (connectedPlayers == 2) {
             GameManager.instance.StartGame();
+            players[0].Initialize(lowerBodyController);
+            players[1].Initialize(upperBodyController);
         }
 
     }

@@ -1807,12 +1807,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 84032422719712272, guid: a6d033abfbb43774bbabbc7fae82ba0c,
-        type: 3}
-      propertyPath: m_PanelSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: 1116eccacde23514282ec4dc8869660a,
-        type: 2}
     - target: {fileID: 3646752873234914322, guid: a6d033abfbb43774bbabbc7fae82ba0c,
         type: 3}
       propertyPath: m_Name
