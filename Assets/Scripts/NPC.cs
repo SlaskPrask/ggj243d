@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour {
 
     public Transform itemSpawn;
     public ItemCollector itemCollector;
+    public Exclamation exclamation;
 
     public QuestList questList;
 
@@ -87,6 +88,12 @@ public class NPC : MonoBehaviour {
                     (float)random.NextDouble() * spawnRotForce);
             }
         }
+
+        exclamation.showQuest(true);
+    }
+
+    public void leaveRange() {
+        exclamation.showQuest(false);
     }
 
     public void OnEnable() {
@@ -124,6 +131,8 @@ public class NPC : MonoBehaviour {
 
 
         quest = new ActiveQuest(questData, this, this); //TODO: target
+
+        exclamation.showQuest(false);
     }
 
     public void setOnQuestDone(Action onQuestDone) {
@@ -131,6 +140,10 @@ public class NPC : MonoBehaviour {
     }
 
     public void OnValidate() {
+        if (name == "NPC") {
+            Debug.LogWarning("Give me a real name instead of 'NPC', maybe I want to be Margaret");
+        }
+
         if (!itemSpawn) {
             Debug.LogWarning("NPC is missing an object (itemSpawn) where their mail spawns",
                 gameObject);

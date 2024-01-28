@@ -39,26 +39,23 @@ public class UpperBodyController : BodyPartController {
         GrabHand(rightHandAnchor.position, rightGrab, rightTrigger);
     }
 
-    void MoveAppendage(Transform hand, Vector2 movement, float offset)
-    {
+    void MoveAppendage(Transform hand, Vector2 movement, float offset) {
         Vector3 socket = centralShoulder.position + transform.right * offset;
         Vector3 spherePoint = new Vector3(
-            movement.x, 
-            -Mathf.Sqrt(1 - Mathf.Min(movement.x * movement.x + movement.y * movement.y, 0f)), 
+            movement.x,
+            -Mathf.Sqrt(1 - Mathf.Min(movement.x * movement.x + movement.y * movement.y, 0f)),
             movement.y) * armLength;
 
         hand.position = socket + transform.rotation * spherePoint;
     }
 
     void GrabHand(Vector3 hand, bool state, Transform trigger) {
-        if (state)
-        {
+        if (state) {
             trigger.position = hand + Vector3.down * .5f;
         }
     }
 
-    ConfigurableJoint CreateJoint(Transform obj)
-    {
+    ConfigurableJoint CreateJoint(Transform obj) {
         ConfigurableJoint joint = obj.AddComponent<ConfigurableJoint>();
         joint.xMotion = ConfigurableJointMotion.Locked;
         joint.yMotion = ConfigurableJointMotion.Locked;
@@ -69,16 +66,14 @@ public class UpperBodyController : BodyPartController {
         return joint;
     }
 
-    private void LeftTriggerEvent(Collider other)
-    {
+    private void LeftTriggerEvent(Collider other) {
         ConfigurableJoint joint = CreateJoint(other.transform.parent);
         other.transform.parent.position = leftHandAnchor.position;
         joint.connectedBody = leftHandAnchor.GetComponent<Rigidbody>();
         leftHandObjects.Add(joint);
     }
 
-    private void RightTriggerEvent(Collider other)
-    {
+    private void RightTriggerEvent(Collider other) {
         ConfigurableJoint joint = CreateJoint(other.transform.parent);
         other.transform.parent.position = rightHandAnchor.position;
         joint.connectedBody = rightHandAnchor.GetComponent<Rigidbody>();
@@ -93,34 +88,35 @@ public class UpperBodyController : BodyPartController {
         rightMove = Vector2.ClampMagnitude(input, 1f);
     }
 
-    public override void LeftGrab(bool state)
-    {
+    public override void LeftGrab(bool state) {
         leftGrab = state;
         leftTrigger.gameObject.SetActive(state);
-        if (!state)
-        {
-            foreach (ConfigurableJoint joint in leftHandObjects)
-            {
-                joint.connectedBody = null;
-                joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Destroy(joint);
+        if (!state) {
+            foreach (ConfigurableJoint joint in leftHandObjects) {
+                if (joint) {
+                    joint.connectedBody = null;
+                    joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Destroy(joint);
+                }
             }
+
             leftHandObjects.Clear();
         }
     }
 
-    public override void RightGrab(bool state)
-    {
+    public override void RightGrab(bool state) {
         rightGrab = state;
         rightTrigger.gameObject.SetActive(state);
-        if (!state)
-        {
-            foreach (ConfigurableJoint joint in rightHandObjects)
-            {
-                joint.connectedBody = null;
-                joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Destroy(joint);
+        if (!state) {
+            foreach (ConfigurableJoint joint in rightHandObjects) {
+                if (joint) {
+                    joint.connectedBody = null;
+
+                    joint.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Destroy(joint);
+                }
             }
+
             rightHandObjects.Clear();
         }
     }
