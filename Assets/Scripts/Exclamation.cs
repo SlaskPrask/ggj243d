@@ -9,6 +9,12 @@ public class Exclamation : MonoBehaviour {
 
     public string subs;
 
+    public void Awake() {
+        if (!npc) {
+            npc = GetComponentInParent<NPC>();
+        }
+    }
+
     public void setSubs(string subs) {
         this.subs = subs;
         StartCoroutine(stopSubs());
