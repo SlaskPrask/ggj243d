@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
         startScreen.SetActive(false);
         goalsManager.activate();
         questManager.binder.enabled = true;
+        questManager.startGivingQuests();
     }
 
     public void SwitchPlayers() {
