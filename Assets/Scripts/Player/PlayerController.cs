@@ -18,24 +18,39 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void ShowBinder(InputAction.CallbackContext ctx) {
+        if(!controller) {
+            return;
+        }
         if (ctx.ReadValueAsButton() && ctx.phase == InputActionPhase.Performed) {
             GameManager.questManager.binder.toggle();
         }
     }
 
     public void MoveLeftStick(InputAction.CallbackContext ctx) {
+        if (!controller) {
+            return;
+        }
         controller.MoveLeftAppendage(ctx.ReadValue<Vector2>());
     }
 
     public void MoveRightStick(InputAction.CallbackContext ctx) {
+        if (!controller) {
+            return;
+        }
         controller.MoveRightAppendage(ctx.ReadValue<Vector2>());
     }
 
     public void LeftGrab(InputAction.CallbackContext ctx) {
+        if (!controller) {
+            return;
+        }
         controller.LeftGrab(ctx.ReadValueAsButton());
     }
 
     public void RightGrab(InputAction.CallbackContext ctx) {
+        if (!controller) {
+            return;
+        }
         controller.RightGrab(ctx.ReadValueAsButton());
     }
 }

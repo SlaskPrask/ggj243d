@@ -16,7 +16,7 @@ public class LowerBodyController : BodyPartController {
     private Vector3 newForward;
     private float moveSpeed = 3;
     private float camSpeed = .5f;
-    private float stepDistance = .33f;
+    private float stepDistance = .66f;
     private const float xOffset = 0.1f;
     private UpperBodyController upperBody;
 
