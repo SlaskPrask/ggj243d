@@ -3,7 +3,32 @@ guid: c7351c1988bc5f34d8cf1347ad959e58
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackMaterial
+    second: {fileID: 2100000, guid: 13a89534c2fae044b9b0c183201a9a80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HumanHairMaterial
+    second: {fileID: 2100000, guid: cb0dadaddbb4c9f4e8f1712c48ac5492, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HumanSkinMaterial
+    second: {fileID: 2100000, guid: 74bd6b27db958b043a18b10f1c550f53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlayerSuitMaterial
+    second: {fileID: 2100000, guid: 556cf41001ba68e458c74e6fe69f9486, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TieRedMaterial
+    second: {fileID: 2100000, guid: d8ec744a2c53b2f4a9a49198cf9c6d14, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

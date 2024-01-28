@@ -36,14 +36,12 @@ public class BinderUI : MonoBehaviour {
         visuals.style.top = Length.Percent(100f - 100f * showAmount);
     }
 
-    public void Update() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            if (showDirection < 0) {
-                show();
-            }
-            else {
-                hide();
-            }
+    public void toggle() {
+        if (showDirection < 0) {
+            show();
+        }
+        else {
+            hide();
         }
     }
 

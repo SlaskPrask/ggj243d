@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1650143526662788510}
   - component: {fileID: 4920032379694236785}
   - component: {fileID: 4361042095924796408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PostitCoffee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotisCoffe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d95b707e846f4d64c923c794010c7b80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

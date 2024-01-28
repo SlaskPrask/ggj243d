@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 394644089471160384}
   - component: {fileID: 2760859165660777969}
   - component: {fileID: 8085356693017783800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63abf8029975f944b9553e9b54bb42af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

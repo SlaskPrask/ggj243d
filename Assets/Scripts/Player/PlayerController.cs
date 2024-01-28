@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -16,6 +17,12 @@ public class PlayerController : MonoBehaviour {
         return controller.bodyPart;
     }
 
+    public void ShowBinder(InputAction.CallbackContext ctx) {
+        if (ctx.ReadValueAsButton() && ctx.phase == InputActionPhase.Performed) {
+            GameManager.questManager.binder.toggle();
+        }
+    }
+
     public void MoveLeftStick(InputAction.CallbackContext ctx) {
         controller.MoveLeftAppendage(ctx.ReadValue<Vector2>());
     }
@@ -24,12 +31,11 @@ public class PlayerController : MonoBehaviour {
         controller.MoveRightAppendage(ctx.ReadValue<Vector2>());
     }
 
-    public void LeftGrab(InputAction.CallbackContext ctx)
-    {
+    public void LeftGrab(InputAction.CallbackContext ctx) {
         controller.LeftGrab(ctx.ReadValueAsButton());
-    }    
-    public void RightGrab(InputAction.CallbackContext ctx)
-    {
+    }
+
+    public void RightGrab(InputAction.CallbackContext ctx) {
         controller.RightGrab(ctx.ReadValueAsButton());
     }
 }

@@ -123,6 +123,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e2e0bd21-717c-473c-8a5f-f1c81099250f
     m_ActionName: Player/Right Grab[/Keyboard/rightShift,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8403595231649850495}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ShowBinder
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9553d7bd-a145-4149-b731-e1249e5616e1
+    m_ActionName: Player/Binder[/XInputControllerWindows/start,/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
