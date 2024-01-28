@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 9054662400543129667}
   - {fileID: 2663481270728384950}
-  - {fileID: 5568139472965583073}
+  - {fileID: 1171772978294396846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5771708343121269237
@@ -105,7 +105,121 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3bc00fdf332344a5d7ae099d64675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   scoreHud: {fileID: 9101306372048865320}
+=======
+--- !u!1 &3756139746623366093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171772978294396846}
+  - component: {fileID: 8637248111092745752}
+  - component: {fileID: 3005419775786512695}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1171772978294396846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756139746623366093}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4980475497291828063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8637248111092745752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756139746623366093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ebbfa8269bd6f47b48da0d2ad8ee6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coffeeEvent:
+    Guid:
+      Data1: -2115365558
+      Data2: 1230277674
+      Data3: 93725106
+      Data4: 1324599432
+    Path: event:/Requests/Coffee
+  coffeeTexts:
+  - Caffeine or death!
+  - Coffee me!!
+  - Coffee please.
+  - Hey! Can you grab me a coffee?
+  - 'Me need coffee. '
+  printerEvent:
+    Guid:
+      Data1: 694237455
+      Data2: 1264755746
+      Data3: 909650601
+      Data4: -1588872423
+    Path: event:/Requests/Printer
+  printerTexts:
+  - Could you put paper in the printer?
+  - Printer went nomnomnom again.
+  - Printer ate all the paper again.
+  postEvent:
+    Guid:
+      Data1: 1215324289
+      Data2: 1194210085
+      Data3: -1127639153
+      Data4: -1899296958
+    Path: event:/Requests/Post
+  postTexts:
+  - Could you deliver this package to the post box?
+  - Here is a package.
+  - Package ready.
+--- !u!114 &3005419775786512695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756139746623366093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -98304541
+      Data2: 1193179050
+      Data3: -219389771
+      Data4: 315879043
+    Path: event:/Song
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+>>>>>>> e615c0d4643f45b6cc81f1b313d703030d889356
 --- !u!1 &3921741470817137079
 GameObject:
   m_ObjectHideFlags: 0
