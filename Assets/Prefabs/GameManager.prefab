@@ -105,9 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3bc00fdf332344a5d7ae099d64675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  scoreHud: {fileID: 9101306372048865320}
-=======
 --- !u!1 &3756139746623366093
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +216,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
->>>>>>> e615c0d4643f45b6cc81f1b313d703030d889356
 --- !u!1 &3921741470817137079
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,55 +330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb9f92871c111448bd3a815e94e7d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5253707457827888102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5568139472965583073}
-  - component: {fileID: 9101306372048865320}
-  m_Layer: 0
-  m_Name: ScoreHUD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5568139472965583073
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253707457827888102}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4980475497291828063}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9101306372048865320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253707457827888102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 7946491d850b6ae47b14f2bc3e2a2095, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 9c56c9169f4b83b4f8cd665af5310551,
-    type: 3}
-  m_SortingOrder: 0
 --- !u!1001 &6910234794891122149
 PrefabInstance:
   m_ObjectHideFlags: 0

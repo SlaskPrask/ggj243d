@@ -29,6 +29,6 @@ public class GoalsManager : MonoBehaviour {
 
     public void taskCompleted() {
         ++tasksCompleted;
-        tasksDone.text = $"{tasksCompleted}€ work done";
+        tasksDone.text = $"{tasksCompleted} work done";
     }
 }
