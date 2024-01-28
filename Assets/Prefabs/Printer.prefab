@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageNumberPrefab: {fileID: 3778947965598658374, guid: ff02c5cd7adb80243818982499ccb0dd,
     type: 3}
-  cost: 3000
+  cost: 5000
   toughness: 450
   minHitForce: 8
 --- !u!1001 &507388226383914446
