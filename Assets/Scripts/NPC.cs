@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour {
 
     public Action onQuestDone = null;
 
-    public float spawnForce = 1f;
+    public float spawnForce = 6.5f;
     public float spawnRotForce = 20f;
 
     private ActiveQuest quest;
