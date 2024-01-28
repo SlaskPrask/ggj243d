@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 
     public static NPCManager npcManager { get; private set; }
 
+    public static Camera camera { get; private set; }
+
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -24,5 +26,7 @@ public class GameManager : MonoBehaviour {
         playerDetector = GetComponentInChildren<PlayerDetector>().Initialize();
         printerManager = GetComponentInChildren<PrinterManager>().Initialize();
         npcManager = GetComponentInChildren<NPCManager>().Initialize();
+
+        camera = Camera.main;
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8356660151351393672}
   - component: {fileID: 5389670274949025961}
   - component: {fileID: 4583860699850211175}
+  - component: {fileID: 6229144479320686849}
   m_Layer: 0
   m_Name: Postbox
   m_TagString: Untagged
@@ -88,6 +89,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wants: 3
+--- !u!114 &6229144479320686849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984844710558347679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d973ef17bf4db948abd0b72d72f4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNumberPrefab: {fileID: 3778947965598658374, guid: ff02c5cd7adb80243818982499ccb0dd,
+    type: 3}
+  cost: 1200
+  toughness: 1000
+  minHitForce: 8
 --- !u!1001 &5821159525452914067
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class QuestManager : MonoBehaviour {
     private List<NPC> npcs;
     public List<float> newQuestTimers;
 
-
     public void Start() {
         npcs = FindObjectsOfType<NPC>().ToList();
 
