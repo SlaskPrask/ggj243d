@@ -11,9 +11,11 @@ public class PlayerDetector : MonoBehaviour
     PlayerController[] players;
     LowerBodyController lowerBodyController;
     UpperBodyController upperBodyController;
+    private bool p1Bottom;
 
     public PlayerDetector Initialize() {
         players = new PlayerController[2];
+        p1Bottom = true;
         return this;
     }
 
@@ -23,6 +25,14 @@ public class PlayerDetector : MonoBehaviour
 
     public void SetUpperBodyController(UpperBodyController upperBody) {
         upperBodyController = upperBody;
+    }
+
+    public void SwitchPlayer(Material playerSuit) {
+        //Get suit material, switch colors too
+        p1Bottom = !p1Bottom;
+        players[0].Initialize(p1Bottom ? lowerBodyController : upperBodyController);
+        players[1].Initialize(p1Bottom ? upperBodyController : lowerBodyController);
+        playerSuit.SetFloat("_ColorSwitch", p1Bottom ? 0f : 1f);
     }
 
 
@@ -57,6 +67,10 @@ public class PlayerDetector : MonoBehaviour
                     players[0].Initialize(upperBodyController);
                     break;
             }
+        }
+
+        if (connectedPlayers == 2) {
+            GameManager.instance.StartGame();
         }
 
     }
