@@ -91,6 +91,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6e7202ef-e8eb-4906-9c90-e1e7712635c2
     m_ActionName: Player/Right Appendage[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8403595231649850495}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: LeftGrab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1779d01-4423-4e89-9972-9bafe9191de1
+    m_ActionName: Player/Left Grab[/Keyboard/leftShift,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8403595231649850495}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: RightGrab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e2e0bd21-717c-473c-8a5f-f1c81099250f
+    m_ActionName: Player/Right Grab[/Keyboard/rightShift,/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -108,5 +140,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc8f3a518a00fc439cd8236f610c420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {x: 0, y: 0}
-  right: {x: 0, y: 0}

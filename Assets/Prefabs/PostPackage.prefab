@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3123926244554712069}
   - component: {fileID: 5202105221282388028}
   - component: {fileID: 7138841789310653072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PostPackage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostPackage
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b45e6234029fe644b99c48ba54b1e7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

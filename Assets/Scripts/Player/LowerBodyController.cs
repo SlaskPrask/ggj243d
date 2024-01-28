@@ -14,24 +14,29 @@ public class LowerBodyController : BodyPartController {
     private float camSpeed = .5f;
     private float stepDistance = .33f;
     private const float xOffset = 0.1f;
+    private UpperBodyController upperBody;
 
     private void Awake() {
         bodyPart = BodyPart.LEGS;
         GameManager.playerDetector.SetLowerBodyController(this);
+        upperBody = transform.parent.GetComponentInChildren<UpperBodyController>();
     }
 
     private void Update() {
+        float deltaTime = Time.deltaTime;
         if (state == AppendageState.NONE) {
             Vector3 pos = (leftFootAnchor.position + rightFootAnchor.position) * .5f;
             pos.y = transform.position.y;
-            transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * moveSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, pos, deltaTime * moveSpeed);
             // to do: fix rotation
-            transform.forward = Vector3.RotateTowards(transform.forward, newForward, Time.deltaTime * camSpeed, 0f);
+            transform.forward = Vector3.RotateTowards(transform.forward, newForward, deltaTime * camSpeed, 0f);
         } else if (state == AppendageState.LEFT) {
             MoveAppendage(leftFootAnchor, leftMove, -xOffset);
         } else {
             MoveAppendage(rightFootAnchor, rightMove, xOffset);
         }
+
+        upperBody.BodyUpdate(deltaTime, transform.forward);
     }
 
     private void OnDrawGizmos() {
@@ -40,9 +45,7 @@ public class LowerBodyController : BodyPartController {
     }
 
     void MoveAppendage(Transform foot, Vector2 movement, float offset) {
-        Vector3 anchor = transform.position;
-        anchor += transform.right * offset;
-
+        Vector3 anchor = transform.position + transform.right * offset;
         
         Vector3 newMove = transform.rotation * new Vector3(movement.x, 0, movement.y) * stepDistance;
         Vector3 move3d = new Vector3(anchor.x + newMove.x, foot.position.y, anchor.z + newMove.z);
@@ -91,5 +94,11 @@ public class LowerBodyController : BodyPartController {
             }
             
         }
+    }
+
+    public override void LeftGrab(bool state) {     
+    }
+
+    public override void RightGrab(bool state) {
     }
 }

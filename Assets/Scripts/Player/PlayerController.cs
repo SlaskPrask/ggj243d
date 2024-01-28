@@ -23,4 +23,13 @@ public class PlayerController : MonoBehaviour {
     public void MoveRightStick(InputAction.CallbackContext ctx) {
         controller.MoveRightAppendage(ctx.ReadValue<Vector2>());
     }
+
+    public void LeftGrab(InputAction.CallbackContext ctx)
+    {
+        controller.LeftGrab(ctx.ReadValueAsButton());
+    }    
+    public void RightGrab(InputAction.CallbackContext ctx)
+    {
+        controller.RightGrab(ctx.ReadValueAsButton());
+    }
 }
