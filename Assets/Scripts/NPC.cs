@@ -10,9 +10,15 @@ public class NPC : MonoBehaviour {
     private static readonly Random random = new Random();
 
 
+    public Transform itemSpawn;
     public ItemCollector itemCollector;
+
     public QuestList questList;
+
     public Action onQuestDone = null;
+
+    public float spawnForce = 1f;
+    public float spawnRotForce = 20f;
 
     private ActiveQuest quest;
 
@@ -44,7 +50,9 @@ public class NPC : MonoBehaviour {
 
         itemCollector.setWants(ItemProperty.None);
 
-        item.target = null;
+        if (item) {
+            item.target = null;
+        }
 
         if (onQuestDone != null) {
             onQuestDone();
@@ -63,6 +71,32 @@ public class NPC : MonoBehaviour {
         return quest;
     }
 
+    public void onTalk() {
+        if (quest != null && quest.started == false) {
+            quest.started = true;
+            if (quest.quest.spawnItem) {
+                GameObject obj = Instantiate(quest.quest.spawnItem, itemSpawn.position,
+                    Quaternion.identity);
+
+                obj.GetComponentInParent<NPCItem>()?.init(this);
+
+                Rigidbody rb = obj.GetComponentInParent<Rigidbody>();
+                rb.velocity = Vector3.up * spawnForce;
+                rb.angularVelocity = new Vector3((float)random.NextDouble() * spawnRotForce,
+                    (float)random.NextDouble() * spawnRotForce,
+                    (float)random.NextDouble() * spawnRotForce);
+            }
+        }
+    }
+
+    public void OnEnable() {
+        GameManager.npcManager.add(this);
+    }
+
+    public void OnDisable() {
+        GameManager.npcManager.remove(this);
+    }
+
     public bool hasQuest() {
         return quest != null;
     }
@@ -70,15 +104,36 @@ public class NPC : MonoBehaviour {
     private void setQuest(QuestData questData) {
         itemCollector.setWants(questData.wantedItem);
 
-        if (questData.wantedItem == ItemProperty.None) {
-            quest = null;
+        switch (questData.wantedItem) {
+            case ItemProperty.None:
+                quest = null;
+                break;
+            case ItemProperty.Mail:
+                itemCollector.setWants(ItemProperty.None);
+                break;
+            case ItemProperty.CoffeeCup:
+                break;
+            case ItemProperty.PaperStack:
+                GameManager.printerManager.addRequest(this);
+                itemCollector.setWants(ItemProperty.None);
+                break;
+            default:
+                Debug.LogWarning("invalid quest item " + questData.wantedItem);
+                throw new ArgumentOutOfRangeException();
         }
-        else {
-            quest = new ActiveQuest(questData, this, this); //TODO: target
-        }
+
+
+        quest = new ActiveQuest(questData, this, this); //TODO: target
     }
 
     public void setOnQuestDone(Action onQuestDone) {
         this.onQuestDone = onQuestDone;
+    }
+
+    public void OnValidate() {
+        if (!itemSpawn) {
+            Debug.LogWarning("NPC is missing an object (itemSpawn) where their mail spawns",
+                gameObject);
+        }
     }
 }

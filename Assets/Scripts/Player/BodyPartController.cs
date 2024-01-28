@@ -11,5 +11,7 @@ public abstract class BodyPartController : MonoBehaviour
     protected AppendageState state;
 
     public abstract void MoveLeftAppendage(Vector2 input); 
-    public abstract void MoveRightAppendage(Vector2 input); 
+    public abstract void MoveRightAppendage(Vector2 input);
+    public abstract void LeftGrab(bool state);
+    public abstract void RightGrab(bool state);
 }

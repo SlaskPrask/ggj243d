@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{01ed6c6d-0513-4927-aa3b-8b2ac2bc777e}">
+		<property name="assetPath">
+			<value>Could you put paper - Audio - Mia 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{474b891c-c42c-4ef7-a6c1-0eea08c4380c}</destination>
+		</relationship>
+	</object>
+</objects>

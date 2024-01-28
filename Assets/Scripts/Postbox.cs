@@ -15,7 +15,12 @@ public class Postbox : MonoBehaviour {
     }
 
     public bool collected(ItemProperty property, Item item, bool isTarget) {
-        Destroy(item);
+        Package mail = item.GetComponentInParent<Package>();
+        if (mail != null) {
+            mail.delivered(property);
+            Destroy(mail.gameObject);
+        }
+
         Debug.Log("Mailed");
 
         return true;
