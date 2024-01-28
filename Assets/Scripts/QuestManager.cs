@@ -12,7 +12,6 @@ public class QuestManager : MonoBehaviour {
     private List<NPC> npcs;
     public List<float> newQuestTimers;
 
-
     public void Start() {
         npcs = FindObjectsOfType<NPC>().ToList();
 
@@ -37,7 +36,6 @@ public class QuestManager : MonoBehaviour {
 
             List<NPC> available = npcs.Where(n => !n.hasQuest()).ToList();
             while (available.Count == 0) {
-                Debug.Log("no free npc for a new quest");
                 yield return oneSecond;
                 available = npcs.Where(n => !n.hasQuest()).ToList();
             }
@@ -54,7 +52,10 @@ public class QuestManager : MonoBehaviour {
 
             BinderListEntry binderEntry = binder.addQuest(quest.formatted());
 
-            npc.setOnQuestDone(() => binder.finishQuest(binderEntry));
+            npc.setOnQuestDone(() => {
+                GameManager.goalsManager.taskCompleted();
+                binder.finishQuest(binderEntry);
+            });
         }
     }
 }

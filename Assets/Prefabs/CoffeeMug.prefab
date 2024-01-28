@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8813910268519719893}
   - component: {fileID: 8578933200036670709}
   - component: {fileID: 5724823452444500467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoffeeMug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,6 +76,23 @@ MonoBehaviour:
   properties: 01000000
   target: {fileID: 0}
   renderer: {fileID: 694926446967249444}
+--- !u!114 &429012449981927579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8423928851404827580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d973ef17bf4db948abd0b72d72f4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNumberPrefab: {fileID: 3778947965598658374, guid: ff02c5cd7adb80243818982499ccb0dd,
+    type: 3}
+  cost: 20
+  toughness: 400
+  minHitForce: 13
 --- !u!1001 &4875478851078668854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CoffeeCupBlendShape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c8af6e80cae11c743a8c260cdedd4724,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,6 +5,8 @@ public class ActiveQuest {
     public NPC from;
     public NPC to;
 
+    public bool started = false;
+
     public ActiveQuest(QuestData quest, NPC from, NPC to) {
         this.quest = quest;
         this.from = from;

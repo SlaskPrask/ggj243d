@@ -11,6 +11,7 @@ public class QuestList : ScriptableObject {
 [System.Serializable]
 public struct QuestData {
     public ItemProperty wantedItem;
+    public GameObject spawnItem;
 
     [Tooltip("{from} for who assigned the task, {to} for who the item is brought to")]
     public string noteText;
