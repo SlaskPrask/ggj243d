@@ -93,6 +93,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec725fe6b6914bf8877941f1e6219741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names:
+  - Matti
+  - Henrik
+  - Jan
+  - Wilhelm
+  - Pontus
+  - Martin
+  - Lars
+  - Gulliver
+  - Mia
+  - Magnus
+  - Gunnar
+  - Sage
+  - Tom
+  - Sanna
+  - Hilda
+  - Ingela
+  availableNames: []
 --- !u!114 &59976290421809431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc3bc00fdf332344a5d7ae099d64675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreHud: {fileID: 0}
 --- !u!1 &3756139746623366093
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +204,27 @@ MonoBehaviour:
   - Could you deliver this package to the post box?
   - Here is a package.
   - Package ready.
+  pickupSound:
+    Guid:
+      Data1: 1244843734
+      Data2: 1247090277
+      Data3: -1149939270
+      Data4: -916484747
+    Path: event:/Pickup
+  successSound:
+    Guid:
+      Data1: -2004548679
+      Data2: 1270199729
+      Data3: 941291934
+      Data4: -1580665721
+    Path: event:/Success
+  smackSound:
+    Guid:
+      Data1: -1787918900
+      Data2: 1309101855
+      Data3: 1423694015
+      Data4: 248680260
+    Path: event:/Smack
 --- !u!114 &3005419775786512695
 MonoBehaviour:
   m_ObjectHideFlags: 0

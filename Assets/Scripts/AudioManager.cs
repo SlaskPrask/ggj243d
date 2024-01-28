@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [Header("Stuff")]
     public EventReference pickupSound;
     public EventReference successSound;
+    public EventReference smackSound;
 
     public void PlayOneShot(EventReference eventRef, Vector3 position, int value) {
         var instance = FMODUnity.RuntimeManager.CreateInstance(eventRef);
@@ -32,6 +33,14 @@ public class AudioManager : MonoBehaviour
         instance.start();
         instance.release();
     }
+
+    public void PlaySmack(Vector3 position) {
+        var instance = FMODUnity.RuntimeManager.CreateInstance(pickupSound);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+        instance.start();
+        instance.release();
+    }
+
 
     public void PlaySuccess() {
         var instance = FMODUnity.RuntimeManager.CreateInstance(successSound);

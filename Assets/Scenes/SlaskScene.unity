@@ -682,6 +682,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Path
+      value: event:/Smack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data1
+      value: -1787918900
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data2
+      value: 1309101855
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data3
+      value: 1423694015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data4
+      value: 248680260
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
