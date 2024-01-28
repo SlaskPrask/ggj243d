@@ -24,12 +24,20 @@ public class ExpensiveItem : MonoBehaviour {
         float expenses = damage * cost;
 
         expenses = Mathf.Round(expenses * 100f / 5f) * 5f / 100f;
+        float newAmount = Mathf.Min(cost, brokenAmount + expenses);
 
-        brokenAmount = Mathf.Min(cost, brokenAmount + expenses);
+        expenses = newAmount - brokenAmount;
+
+        if (expenses <= 0) {
+            return;
+        }
+
+        GameManager.goalsManager.propertyDamaged(expenses);
+        brokenAmount = newAmount;
 
         DamageNumberText text = Instantiate(damageNumberPrefab, collision.contacts[0].point,
             Quaternion.identity).GetComponent<DamageNumberText>();
 
-        text.setText($"{expenses}€");
+        text.setText($"-{expenses:0.00}€");
     }
 }

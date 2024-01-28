@@ -52,7 +52,10 @@ public class QuestManager : MonoBehaviour {
 
             BinderListEntry binderEntry = binder.addQuest(quest.formatted());
 
-            npc.setOnQuestDone(() => binder.finishQuest(binderEntry));
+            npc.setOnQuestDone(() => {
+                GameManager.goalsManager.taskCompleted();
+                binder.finishQuest(binderEntry);
+            });
         }
     }
 }
