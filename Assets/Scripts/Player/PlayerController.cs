@@ -18,9 +18,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void ShowBinder(InputAction.CallbackContext ctx) {
-        Debug.Log("press");
         if (ctx.ReadValueAsButton() && ctx.phase == InputActionPhase.Performed) {
-            Debug.Log("button");
             GameManager.questManager.binder.toggle();
         }
     }

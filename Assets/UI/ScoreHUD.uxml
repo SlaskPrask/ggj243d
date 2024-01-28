@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; position: absolute; left: 0; top: 0;">
-        <ui:Label tabindex="-1" text="No work done" parse-escape-sequences="true" display-tooltip-when-elided="true" name="done" style="-unity-font-style: bold; color: rgb(60, 213, 56); font-size: 24px;" />
-    </ui:VisualElement>
-    <ui:VisualElement style="flex-grow: 1; position: absolute; top: 0; right: 0;">
-        <ui:Label tabindex="-1" text="No property damages" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cost" style="-unity-font-style: bold; color: rgb(186, 43, 43); font-size: 24px;" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1; position: absolute; left: 0; top: 0;">
+            <ui:Label tabindex="-1" text="No work done" parse-escape-sequences="true" display-tooltip-when-elided="true" name="done" style="-unity-font-style: bold; color: rgb(60, 213, 56); font-size: 24px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; position: absolute; top: 0; right: 0;">
+            <ui:Label tabindex="-1" text="No property damages" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cost" style="-unity-font-style: bold; color: rgb(186, 43, 43); font-size: 24px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -150,9 +150,9 @@ public class NPC : MonoBehaviour {
             Debug.LogWarning("Give me a real name instead of 'NPC', maybe I want to be Margaret");
         }*/
 
-        if (!itemSpawn) {
-            Debug.LogWarning("NPC is missing an object (itemSpawn) where their mail spawns",
+        /*if (!itemSpawn) {
+            Debug.LogWarning(name + " is missing an object (itemSpawn) where their mail spawns",
                 gameObject);
-        }
+        }*/
     }
 }
