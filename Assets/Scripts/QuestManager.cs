@@ -18,7 +18,9 @@ public class QuestManager : MonoBehaviour {
         if (newQuestTimers.Count == 0) {
             newQuestTimers.Add(5);
         }
+    }
 
+    public void startGivingQuests() {
         StartCoroutine(giveNewQuest());
     }
 
