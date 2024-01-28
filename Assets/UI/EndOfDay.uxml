@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(117, 69, 36); align-items: center; justify-content: center;">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(83, 46, 24); width: 316px; rotate: -11deg; height: 500px; max-width: 316px; max-height: 500px; min-width: 316px; min-height: 500px;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgb(236, 227, 219); margin-top: 30px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; padding-top: 0; padding-right: 10px; padding-left: 10px;">
+                <ui:VisualElement style="flex-grow: 1; flex-shrink: 0;">
+                    <ui:Label tabindex="-1" text="End of day Work Log" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 18px;" />
+                    <ui:Label tabindex="-1" text="Work assignments done" parse-escape-sequences="true" display-tooltip-when-elided="true" style="padding-bottom: 0; margin-bottom: 0;" />
+                    <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="done" style="margin-top: 0; padding-top: 0; -unity-font-style: bold;" />
+                    <ui:Label tabindex="-1" text="Essential work expenses" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-bottom: 0; padding-bottom: 0;" />
+                    <ui:Label tabindex="-1" text="0€" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cost" style="margin-top: 0; -unity-font-style: bold;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; padding-bottom: 40px;">
+                    <ui:Label tabindex="-1" text="Manager notes" parse-escape-sequences="true" display-tooltip-when-elided="true" style="padding-bottom: 0; margin-bottom: 0;" />
+                    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: flex-end;">
+                        <ui:Label tabindex="-1" text="FIRED" parse-escape-sequences="true" display-tooltip-when-elided="true" name="resolution" style="-unity-font-style: bold; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; color: rgb(255, 255, 255);" />
+                        <ui:Label tabindex="-1" text=":)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="resolution2" style="margin-top: 0; -unity-font-style: normal; font-size: 12px; flex-grow: 1; white-space: normal;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label tabindex="-1" text="Congratulations! You got promoted to Senior Useless Task Person Congratulations! You got promoted to Senior Useless Task Person" parse-escape-sequences="true" display-tooltip-when-elided="true" name="explanation" style="-unity-text-align: upper-right; flex-grow: 1; white-space: normal;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

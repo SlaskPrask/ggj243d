@@ -96,6 +96,7 @@ public class UpperBodyController : BodyPartController {
         rigidbody.transform.position = leftHand.position;
         joint.connectedBody = leftHand.GetComponent<Rigidbody>();
         leftHandObjects.Add(joint);
+        GameManager.audioManager.PlayPickup(leftHand.position);
     }
 
     private void RightTriggerEvent(Collider other) {
@@ -110,6 +111,7 @@ public class UpperBodyController : BodyPartController {
         rigidbody.transform.position = rightHand.position;
         joint.connectedBody = rightHand.GetComponent<Rigidbody>();
         rightHandObjects.Add(joint);
+        GameManager.audioManager.PlayPickup(rightHand.position);
     }
 
     public override void MoveLeftAppendage(Vector2 input) {

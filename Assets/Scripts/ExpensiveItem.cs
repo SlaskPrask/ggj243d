@@ -20,6 +20,7 @@ public class ExpensiveItem : MonoBehaviour {
             return;
         }
 
+        GameManager.audioManager.PlaySmack(transform.position);
         float damage = force / toughness;
         float expenses = damage * cost;
 

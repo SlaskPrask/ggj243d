@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class GoalsManager : MonoBehaviour {
-    private float propertyDamageCost = 0;
-    private int tasksCompleted = 0;
+    public float propertyDamageCost { get; private set; } = 0;
+    public int tasksCompleted { get; private set; } = 0;
 
     public UIDocument scoreHud;
 
-    public Label tasksDone;
-    public Label costsDone;
+    private Label tasksDone;
+    private Label costsDone;
 
     public GoalsManager Initialize() {
         propertyDamageCost = 0;
@@ -30,5 +30,6 @@ public class GoalsManager : MonoBehaviour {
     public void taskCompleted() {
         ++tasksCompleted;
         tasksDone.text = $"{tasksCompleted} work done";
+        GameManager.audioManager.PlaySuccess();
     }
 }
