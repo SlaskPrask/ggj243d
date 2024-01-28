@@ -6,6 +6,10 @@ using UnityEngine.UIElements;
 public class LowerBodyController : BodyPartController {
     public Transform leftFootAnchor;
     public Transform rightFootAnchor;
+    public Transform leftFoot;
+    public Transform rightFoot;
+
+    private Rigidbody rb;
 
     private Vector2 leftMove;
     private Vector2 rightMove;
@@ -17,6 +21,7 @@ public class LowerBodyController : BodyPartController {
     private UpperBodyController upperBody;
 
     private void Awake() {
+        rb = GetComponent<Rigidbody>();
         bodyPart = BodyPart.LEGS;
         GameManager.playerDetector.SetLowerBodyController(this);
         upperBody = transform.parent.GetComponentInChildren<UpperBodyController>();
@@ -25,14 +30,18 @@ public class LowerBodyController : BodyPartController {
     private void Update() {
         float deltaTime = Time.deltaTime;
         if (state == AppendageState.NONE) {
-            Vector3 pos = (leftFootAnchor.position + rightFootAnchor.position) * .5f;
+            Vector3 pos = (leftFoot.position + rightFoot.position) * .5f;
             pos.y = transform.position.y;
-            transform.position = Vector3.MoveTowards(transform.position, pos, deltaTime * moveSpeed);
+            transform.position =
+                Vector3.MoveTowards(transform.position, pos, deltaTime * moveSpeed);
             // to do: fix rotation
-            transform.forward = Vector3.RotateTowards(transform.forward, newForward, deltaTime * camSpeed, 0f);
-        } else if (state == AppendageState.LEFT) {
+            transform.forward =
+                Vector3.RotateTowards(transform.forward, newForward, deltaTime * camSpeed, 0f);
+        }
+        else if (state == AppendageState.LEFT) {
             MoveAppendage(leftFootAnchor, leftMove, -xOffset);
-        } else {
+        }
+        else {
             MoveAppendage(rightFootAnchor, rightMove, xOffset);
         }
 
@@ -46,11 +55,11 @@ public class LowerBodyController : BodyPartController {
 
     void MoveAppendage(Transform foot, Vector2 movement, float offset) {
         Vector3 anchor = transform.position + transform.right * offset;
-        
-        Vector3 newMove = transform.rotation * new Vector3(movement.x, 0, movement.y) * stepDistance;
+
+        Vector3 newMove =
+            transform.rotation * new Vector3(movement.x, 0, movement.y) * stepDistance;
         Vector3 move3d = new Vector3(anchor.x + newMove.x, foot.position.y, anchor.z + newMove.z);
         foot.position = move3d;
-
     }
 
     public override void MoveLeftAppendage(Vector2 input) {
@@ -63,15 +72,15 @@ public class LowerBodyController : BodyPartController {
                 return;
             }
 
-            if (!(Vector2.Dot(input.normalized, leftMove.normalized) >= .9f && inputMagnitude < leftMove.magnitude)) {
+            if (!(Vector2.Dot(input.normalized, leftMove.normalized) >= .9f &&
+                  inputMagnitude < leftMove.magnitude)) {
                 leftMove = input;
                 newForward = input.normalized;
                 newForward.z = newForward.y;
                 newForward.y = 0;
                 newForward = transform.rotation * newForward;
                 state = AppendageState.LEFT;
-            } 
-            
+            }
         }
     }
 
@@ -83,8 +92,9 @@ public class LowerBodyController : BodyPartController {
                 rightMove = Vector2.zero;
                 return;
             }
- 
-            if (!(Vector2.Dot(input.normalized, rightMove.normalized) >= .9f && inputMagnitude < rightMove.magnitude)) {
+
+            if (!(Vector2.Dot(input.normalized, rightMove.normalized) >= .9f &&
+                  inputMagnitude < rightMove.magnitude)) {
                 rightMove = input;
                 newForward = input.normalized;
                 newForward.z = newForward.y;
@@ -92,11 +102,10 @@ public class LowerBodyController : BodyPartController {
                 newForward = transform.rotation * newForward;
                 state = AppendageState.RIGHT;
             }
-            
         }
     }
 
-    public override void LeftGrab(bool state) {     
+    public override void LeftGrab(bool state) {
     }
 
     public override void RightGrab(bool state) {
