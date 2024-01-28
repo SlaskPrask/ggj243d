@@ -27,7 +27,7 @@
 			<value>-39</value>
 		</property>
 		<property name="inputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{dc8827d6-51b7-457e-8fcb-55db6587271c}</destination>
