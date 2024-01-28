@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public static GoalsManager goalsManager { get; private set; }
     public static QuestManager questManager { get; private set; }
+    public static AudioManager audioManager { get; private set; }
 
     public static Camera camera { get; private set; }
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour {
         npcManager = GetComponentInChildren<NPCManager>().Initialize();
         questManager = GetComponentInChildren<QuestManager>();
         goalsManager = GetComponentInChildren<GoalsManager>().Initialize();
+        audioManager = GetComponentInChildren<AudioManager>();
 
         camera = Camera.main;
     }

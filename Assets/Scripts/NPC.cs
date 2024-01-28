@@ -9,7 +9,6 @@ using Random = System.Random;
 public class NPC : MonoBehaviour {
     private static readonly Random random = new Random();
 
-
     public Transform itemSpawn;
     public ItemCollector itemCollector;
     public Exclamation exclamation;
@@ -28,6 +27,8 @@ public class NPC : MonoBehaviour {
         if (itemCollector == null) {
             itemCollector = GetComponentInChildren<ItemCollector>();
         }
+
+        name = GameManager.npcManager.getName();
 
         itemCollector.listener += collected;
     }
@@ -129,9 +130,14 @@ public class NPC : MonoBehaviour {
                 throw new ArgumentOutOfRangeException();
         }
 
+        string subtitles =
+            GameManager.audioManager.PlayRequestSoundGetText(questData.wantedItem,
+                transform.position);
+
 
         quest = new ActiveQuest(questData, this, this); //TODO: target
 
+        exclamation.setSubs(subtitles);
         exclamation.showQuest(false);
     }
 
@@ -140,9 +146,9 @@ public class NPC : MonoBehaviour {
     }
 
     public void OnValidate() {
-        if (name == "NPC") {
+        /*if (name == "NPC") {
             Debug.LogWarning("Give me a real name instead of 'NPC', maybe I want to be Margaret");
-        }
+        }*/
 
         if (!itemSpawn) {
             Debug.LogWarning("NPC is missing an object (itemSpawn) where their mail spawns",

@@ -1,13 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class NPCManager : MonoBehaviour {
+    private static readonly Random random = new Random();
+
     public List<NPC> npcs { get; private set; }
+
+    public string[] names = {
+        "Matti",
+        "Henrik",
+        "Jan",
+        "Wilhelm",
+        "Pontus",
+        "Martin",
+        "Lars",
+        "Gulliver",
+        "Mia",
+        "Magnus",
+        "Gunnar",
+        "Sage",
+        "Tom",
+        "Sanna",
+        "Hilda",
+        "Ingela"
+    };
+
+    public List<string> availableNames;
 
     public NPCManager Initialize() {
         npcs = new();
+
+        availableNames = new List<string>(names);
+
         return this;
+    }
+
+    public string getName() {
+        int index = random.Next(availableNames.Count);
+        string name = availableNames[index];
+        availableNames.RemoveAt(index);
+        return name;
     }
 
     public void add(NPC npc) {
