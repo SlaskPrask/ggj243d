@@ -101,7 +101,7 @@ MonoBehaviour:
   itemCollector: {fileID: 0}
   exclamation: {fileID: 0}
   questList: {fileID: 11400000, guid: da0f08a15e46b3048b37aaba75b0f22b, type: 2}
-  spawnForce: 6.5
+  spawnForce: 5
   spawnRotForce: 20
 --- !u!1001 &4271231519039387126
 PrefabInstance:

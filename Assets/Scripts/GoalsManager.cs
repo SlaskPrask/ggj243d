@@ -16,10 +16,22 @@ public class GoalsManager : MonoBehaviour {
         propertyDamageCost = 0;
         tasksCompleted = 0;
 
+        return this;
+    }
+
+    public void OnEnable() {
+        Debug.Log(tasksDone);
+        Debug.Log(scoreHud);
+        Debug.Log(scoreHud.rootVisualElement);
+        Debug.Log(scoreHud.rootVisualElement.Q<Label>("done"));
         tasksDone = scoreHud.rootVisualElement.Q<Label>("done");
         costsDone = scoreHud.rootVisualElement.Q<Label>("cost");
 
-        return this;
+        scoreHud.rootVisualElement.style.opacity = 0;
+    }
+
+    public void activate() {
+        scoreHud.rootVisualElement.style.opacity = 100;
     }
 
     public void propertyDamaged(float cost) {

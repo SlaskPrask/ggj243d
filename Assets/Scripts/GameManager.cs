@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour {
 
     public static Camera camera { get; private set; }
 
-    
+    public GameObject startScreen;
+
     public float gameTime = 1200;
     public float switchTime = 30f;
     public Material playerSuit;
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour {
 
     public void StartGame() {
         StartCoroutine(GameTimer());
+        startScreen.SetActive(false);
+        goalsManager.activate();
+        questManager.binder.enabled = true;
     }
 
     public void SwitchPlayers() {
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator GameTimer() {
         float time = 0;
         float sTime = 0;
-        
+
         while (time < gameTime) {
             yield return null;
             float delta = Time.deltaTime;
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour {
                 SwitchPlayers();
             }
         }
+
         SceneManager.LoadScene("EndOfDay");
     }
 }

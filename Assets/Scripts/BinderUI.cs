@@ -20,6 +20,8 @@ public class BinderUI : MonoBehaviour {
     private float showDirection = -1;
     private float showAmount = 0;
 
+    public new bool enabled = false;
+
     void Start() {
         document = GetComponent<UIDocument>();
         visuals = document.rootVisualElement.Q("binder");
@@ -37,6 +39,10 @@ public class BinderUI : MonoBehaviour {
     }
 
     public void toggle() {
+        if (!enabled) {
+            return;
+        }
+
         if (showDirection < 0) {
             show();
         }
