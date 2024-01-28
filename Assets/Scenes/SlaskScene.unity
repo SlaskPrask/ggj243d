@@ -572,12 +572,12 @@ PrefabInstance:
     - target: {fileID: 8813910268519719893, guid: 3fba39105d28adf4f9efc7dd02e36258,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 8813910268519719893, guid: 3fba39105d28adf4f9efc7dd02e36258,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.30252707
+      value: -0.303
       objectReference: {fileID: 0}
     - target: {fileID: 8813910268519719893, guid: 3fba39105d28adf4f9efc7dd02e36258,
         type: 3}
@@ -681,6 +681,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Path
+      value: event:/Smack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data1
+      value: -1787918900
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data2
+      value: 1309101855
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data3
+      value: 1423694015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637248111092745752, guid: a6d033abfbb43774bbabbc7fae82ba0c,
+        type: 3}
+      propertyPath: smackSound.Guid.Data4
+      value: 248680260
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

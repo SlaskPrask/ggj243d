@@ -30,5 +30,6 @@ public class GoalsManager : MonoBehaviour {
     public void taskCompleted() {
         ++tasksCompleted;
         tasksDone.text = $"{tasksCompleted} work done";
+        GameManager.audioManager.PlaySuccess();
     }
 }

@@ -222,6 +222,27 @@ MonoBehaviour:
   - Could you deliver this package to the post box?
   - Here is a package.
   - Package ready.
+  pickupSound:
+    Guid:
+      Data1: 1244843734
+      Data2: 1247090277
+      Data3: -1149939270
+      Data4: -916484747
+    Path: event:/Pickup
+  successSound:
+    Guid:
+      Data1: -2004548679
+      Data2: 1270199729
+      Data3: 941291934
+      Data4: -1580665721
+    Path: event:/Success
+  smackSound:
+    Guid:
+      Data1: -1787918900
+      Data2: 1309101855
+      Data3: 1423694015
+      Data4: 248680260
+    Path: event:/Smack
 --- !u!114 &3005419775786512695
 MonoBehaviour:
   m_ObjectHideFlags: 0
