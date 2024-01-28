@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance { get; private set; }
@@ -16,6 +17,11 @@ public class GameManager : MonoBehaviour {
     public static AudioManager audioManager { get; private set; }
 
     public static Camera camera { get; private set; }
+
+    
+    public float gameTime = 1200;
+    public float switchTime = 30f;
+    public Material playerSuit;
 
     private void Awake() {
         if (instance == null) {
@@ -35,5 +41,30 @@ public class GameManager : MonoBehaviour {
         audioManager = GetComponentInChildren<AudioManager>();
 
         camera = Camera.main;
+    }
+
+    public void StartGame() {
+        StartCoroutine(GameTimer());
+    }
+
+    public void SwitchPlayers() {
+        playerDetector.SwitchPlayer(playerSuit);
+    }
+
+    IEnumerator GameTimer() {
+        float time = 0;
+        float sTime = 0;
+        
+        while (time < gameTime) {
+            yield return null;
+            float delta = Time.deltaTime;
+            time += delta;
+            sTime += delta;
+            if (sTime >= switchTime) {
+                sTime -= switchTime;
+                SwitchPlayers();
+            }
+        }
+        SceneManager.LoadScene("EndOfDay");
     }
 }
